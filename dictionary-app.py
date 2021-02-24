@@ -7,6 +7,9 @@ from kivy.lang import Builder
 
 Builder.load_file('design.kv')
 
+def dictionary_search():
+    print("Searching Dictionary")
+
 class AppLayout(Widget):
     pass
 
