@@ -1,8 +1,8 @@
 #:kivy 1.0
 <AppLayout>
-	GridLayout:
+	BoxLayout:
+		orientation: "vertical"
 		size: root.width, root.height
-		cols: 1
 		GridLayout:
 			cols: 1
 
@@ -15,7 +15,11 @@
 
 			TextInput:
 				id: search_word
+        		halign: "right"
+				font_size: 30
 				size_hint_y: None
+				size_hint_x: None
+				width: 500
 				height: 50
 
 			Button:
@@ -26,8 +30,8 @@
 				height: 50
 				on_press: root.dictionary_search()
 
-		GridLayout:
-			cols: 1
+		TextInput:
+			id: display
+			size_hint_y: None
+			height: 100
 
-			TextInput:
-				id: display
