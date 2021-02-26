@@ -1,17 +1,23 @@
+import json
 import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-
+dictionary_data = json.load(open("dictionary_data.json"))
 Builder.load_file('design.kv')
 
-def dictionary_search():
-    print("Searching Dictionary")
-
 class AppLayout(Widget):
-    pass
+    def dictionary_search(self):
+        """Take a user input and search for it in a dictionary."""
+
+        word = self.ids.search_word.text
+        display = self.ids.display
+        try:
+            display.text = '\n'.join(dictionary_data[word])
+        except:
+            display.text = "Check the spelling on your word."
+
 
 class DictionaryApp(App):
     def build(self):
