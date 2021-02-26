@@ -14,7 +14,7 @@ class AppLayout(Widget):
         word = self.ids.search_word.text
         display = self.ids.display
         try:
-            display.text = '\n'.join(dictionary_data[word.lower()])
+            display.text = '\n\n'.join(dictionary_data[word.lower()])
         except:
             display.text = "Please check the spelling on your word."
 
